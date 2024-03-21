@@ -25,7 +25,7 @@ function Time(){
     $("#minutes").html(dateFormat(minutos));
 
     if(segundos == 0){
-        actual = degrees;
+        actual = degrees+6;
     }
      degrees = actual + (6*segundos);
      
