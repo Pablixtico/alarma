@@ -98,6 +98,7 @@ border-radius: 50%;
     padding: 10px;
     border: 0;
     font-size: 1.6rem;
+    cursor:text;
 
 }
 
@@ -119,6 +120,14 @@ border-radius: 50%;
     color: var(--backgroundColor);
     padding: 15px;
     border-radius: 5px;
+    border: 1px solid var(--color1);
+    transition: 200ms ease;
+    cursor: pointer;
+}
+
+.button-section button:hover{
+    background-color: var(--backgroundColor);
+    color: var(--color1);
 }
 .numbers {
 }
@@ -166,18 +175,29 @@ border-radius: 50%;
     display: inline-flex;
     align-items: center;
     border-radius: 4px;
+    border: 1px solid var(--color1);
     font-size: 14px;
     font-weight: 600;
-    color: #fff;
+    color: var(--color1);
     font-size: 14px;
     padding: 10px 12px;
-    background-color: var(--color1);
+    background-color: var(--backgroundColor);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+    transition: 200ms ease;
   }
   
+  .file-input__label:hover{
+    background-color: var(--color1);
+    color: var(--backgroundColor);
+  }
+
   .file-input__label svg {
     font-family: sans-serif;
     height: 16px;
     margin-right: 4px;
+  }
+
+  .name-file{
+    font-size: 10px;
   }
   

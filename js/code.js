@@ -3,6 +3,8 @@ let alarmTime = [];
 let degrees;
 let actual = 66;
 let alarms = [];
+let audio = new Audio("audio/audio1.mp3");
+console.log(audio.src)
 
 $("#alarmNotice").on("click", "span", (e) => {
     delete alarms[alarms.indexOf($(e.target).parent().children("p").html())];
@@ -33,7 +35,8 @@ function Time(){
 
     alarms.forEach((item) => {
         if(item == `${dateFormat(horas)}:${dateFormat(minutos)}` && segundos<1){
-            console.log("ALARMAAAAAA")
+            audio.play();
+            audio.volume = 1;
         }
     })
 
@@ -51,3 +54,13 @@ function addTime(){
     $("#alarmNotice").append(`<div class="alarm"><p>${$("#setTime").val()}</p><span class="material-symbols-outlined">close</span></div>`)
     alarms.push($("#setTime").val());
 }
+
+$(".file-input__input").on("change", ((item) => {
+    let files = $(".file-input__input").prop("files");
+    $(".name-file").html(files[0].name);
+    console.log(files)
+    let utl = URL.createObjectURL(files[0]);
+    console.log(utl);
+    audio.src = utl;
+}));
+
