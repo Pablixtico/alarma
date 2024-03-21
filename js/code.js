@@ -35,6 +35,7 @@ function Time(){
 
     alarms.forEach((item) => {
         if(item == `${dateFormat(horas)}:${dateFormat(minutos)}` && segundos<1){
+            audio.pause();
             audio.play();
             audio.volume = 1;
         }
